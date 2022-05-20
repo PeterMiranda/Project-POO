@@ -27,7 +27,21 @@ public class Dimension {
   //
   // Constructors
   //
-  //Herrera improvement public Dimension () { };
+  /**
+     * Implementacion del constructor por
+     * defecto(vacio) para la clase Dimension
+     */
+  public Dimension () { };
+  
+  /**
+   * Implementacion del constructor con parametros
+   */
+    public Dimension(double diagonal, double largo, double ancho, Medida medida) {
+        this.diagonal = diagonal;
+        this.largo = largo;
+        this.ancho = ancho;
+        this.medida = medida;
+    }
   
   //
   // Methods
