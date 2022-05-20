@@ -73,6 +73,8 @@ public class Tv {
           bx.execute();
           this.print();
       }
+      //Luis Antonio Pacheco Moreno
+      //Ortiz Duarte Erik Isaias 
       Entrada eh = new EntradaHDMI(this);
       Entrada eu = new EntradaUSB(this);
       
