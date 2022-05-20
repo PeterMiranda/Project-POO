@@ -7,11 +7,8 @@ package PMedidas;
  */
 abstract public class Medida {
  //David Abner Bautista Ayala
- boolean comapre (Medida m){
-  return this.getClass().equals(m.getClass());
- }
-  
-
+ 
+private double tipo_medida;
   //
   // Fields
   //
@@ -19,13 +16,16 @@ abstract public class Medida {
   
   //
   // Constructors
-  //
-  //Herrera improvement public Medida () { };
+  public Medida () { };
+  //Herrera improvement
+   
   
   //
   // Methods
-  //
-
+  boolean comapre (Medida m){
+    return this.getClass().equals(m.getClass());
+   }
+   
 
   //
   // Accessor methods
