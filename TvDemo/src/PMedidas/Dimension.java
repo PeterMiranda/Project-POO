@@ -126,20 +126,27 @@ public class Dimension {
    * Implementacion del metodo para cambiar la medida
    *
    */
-  public void cambiarMedida(){
-      if (this.medida instanceof MedidaInternacional) {
-          //realizamos la conversion de unidades
-          //cambiamos a CGS
-          this.diagonal = this.diagonal / 2.45;
-          this.ancho = this.ancho / 2.45;
-          this.largo = this.largo / 2.45;
-      } else if (this.medida instanceof MedidaCGS) {
-          //realizamos la conversion de unidades
-          //cambiamos a Internacional
-          this.diagonal = this.diagonal * 2.45;
-          this.ancho = this.ancho * 2.45;
-          this.largo = this.largo * 2.45;
-      }
-  }
+  public void cambiarMedida(Medida m){
+        if(this.medida.compare(m)){
+            System.out.println("No hubo cambio de medidas");
+            System.out.println("Diagonal: "+this.diagonal);
+            System.out.println("Ancho: "+this.ancho);
+            System.out.println("Largo: "+this.largo);
+            return;
+        }
+        else{
+            if(this.medida instanceof MedidaInternacional){
+                //realizamos la conversion de unidades
+                //cambiamos a CGS
+                this.diagonal = this.diagonal/MedidaCGS.MEDIDACGS;
+            }
+            else if(this.medida instanceof MedidaCGS){
+                //realizamos la conversion de unidades
+                //cambiamos a Internacional
+                this.diagonal = this.diagonal*MedidaInternacional.MEDIDAINT;
+            }
+            this.medida = m;
+        }
+    }
 
 }
