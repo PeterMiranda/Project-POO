@@ -40,7 +40,8 @@ public class Tv {
   private List<App> apps;
   private ConexionWifi wifi;
   private boolean estadoWifi;
-  
+  private String entradaA="USB DESCONECTADO";
+  private String entradaB="HDMI DESCONECTADO";
   //
   // Constructors
   //
@@ -72,6 +73,13 @@ public class Tv {
           bx.execute();
           this.print();
       }
+      Entrada eh = new EntradaHDMI(this);
+      Entrada eu = new EntradaUSB(this);
+      
+      eh.execute();
+      this.print();
+      eu.execute();
+      this.print();
   };
   
   //
@@ -296,7 +304,31 @@ public class Tv {
   {
       this.volumen--;
   }
-
+  //Luis Antonio Pacheco Moreno
+  //modificamos el estado del puerto usb
+  //cada vez que sea llamado
+  public void usb (){
+      if(entradaA.equals("USB CONECTADO")){
+          this.entradaA = "USB DESCONECTADO";
+      }else
+      {
+          if(entradaA.equals("USB DESCONECTADO"))
+              this.entradaA = "USB CONECTADO";
+      }
+  }
+  //Erik Isaias Ortiz Duarte
+  //modificamos el estado del puerto hdmi
+  //cada vez que sea llamado
+  public void hdmi (){
+      
+      if(entradaB.equals("HDMI CONECTADO")){
+          this.entradaB = "HDMI DESCONECTADO";
+      }else
+      {
+          if(entradaB.equals("HDMI DESCONECTADO"))
+              this.entradaB = "HDMI CONECTADO";
+      }
+  }
   public void print() {
       System.out.println("" + this.toString());
   }
@@ -305,6 +337,8 @@ public class Tv {
       String s = "";
       s += this.estado;
       s += this.volumen;
+      s += this.entradaA;
+      s += this.entradaB;
       return s;
   }
 }
