@@ -16,18 +16,26 @@ public class Entrada {
   // Constructors
   //
   //Herrera improvement public Entrada () { };
-  
-  //
-  // Methods
-  //
+  //Erik Isaias Ortiz Duarte
+  public Entrada() {
+    }
 
+    ;
+    //Erik Isaias Ortiz Duarte
+    public Entrada(Tv tv) {
+        this.tv = tv;
+    }
 
-  //
-  // Accessor methods
-  //
-
-  //
-  // Other methods
-  //
+    //
+    // Methods
+    //
+    //
+    // Accessor methods
+    //
+    //
+    // Other methods
+    //
+  //Erik Isaias Ortiz Duarte
+    public abstract void execute();
 
 }
