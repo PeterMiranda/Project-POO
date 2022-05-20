@@ -121,8 +121,25 @@ public class Dimension {
   //
   // Other methods
   //
+  
+  /**
+   * Implementacion del metodo para cambiar la medida
+   *
+   */
   public void cambiarMedida(){
-      
+      if (this.medida instanceof MedidaInternacional) {
+          //realizamos la conversion de unidades
+          //cambiamos a CGS
+          this.diagonal = this.diagonal / 2.45;
+          this.ancho = this.ancho / 2.45;
+          this.largo = this.largo / 2.45;
+      } else if (this.medida instanceof MedidaCGS) {
+          //realizamos la conversion de unidades
+          //cambiamos a Internacional
+          this.diagonal = this.diagonal * 2.45;
+          this.ancho = this.ancho * 2.45;
+          this.largo = this.largo * 2.45;
+      }
   }
 
 }
