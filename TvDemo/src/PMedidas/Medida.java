@@ -22,7 +22,7 @@ private double tipo_medida;
   
   //
   // Methods
-  boolean comapre (Medida m){
+  boolean compare (Medida m){
     return this.getClass().equals(m.getClass());
    }
    
