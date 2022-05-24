@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Class Tv
  */
-public class Tv {
+public class Tv extends JFrame{
 
   //
   // Fields
@@ -77,7 +77,29 @@ public class Tv {
   //
   // Methods
   //
+  //Angel
+  private void initTvJframe(){
 
+  }
+
+  //David
+  private void initAplicaciones(){
+
+  }
+
+  //David
+  private void initiBotones(){
+
+  }
+
+  //Anotonio
+  private void initAltavoces(){
+
+  }
+
+  //Jaqueline
+  private void initEntradas() {
+  }
 
   //
   // Accessor methods
