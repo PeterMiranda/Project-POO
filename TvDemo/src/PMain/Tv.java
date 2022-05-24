@@ -145,10 +145,32 @@ public class Tv extends JFrame{
         }
   }
 
-  //David
-  private void initiBotones(){
+  
+  //codigo para inicializar los botones David
+private void initiBotonesGen(){
+        //inicializamos el atributo de la clase
+        altavoces = new ArrayList<>();
+        //Inicializando las botones dinamicamente
+        ArrayList<String> btnList = new ArrayList<>();
+        btnList.add("Encendido");
+        btnList.add("Apagado");
+        btnList.add("BajarVolumen");
+        btnList.add("SubirVolumen");
 
-  }
+        for (int i = 0; i < btnList.size(); i++) {
+            try {
+                String nombre = btnList.get(i);
+                Class clase = Class.forName("PBotones.Boton" + nombre);
+                Object obj = clase.newInstance();
+                Boton btn = (Boton) obj;
+//              System.out.println(btn);
+//              botones.add(btn);
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
 
   //Anotonio
   private void initAltavoces() {
