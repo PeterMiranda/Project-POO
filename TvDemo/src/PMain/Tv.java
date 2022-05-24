@@ -151,9 +151,29 @@ public class Tv extends JFrame{
   }
 
   //Anotonio
-  private void initAltavoces(){
+  private void initAltavoces() {
+      
+        //inicializamos el atributo de la clase
+        altavoces = new ArrayList<>();
+        //Inicializando los altavoces dinamicamente
+        ArrayList<String> altavocesList = new ArrayList<>();
+        altavocesList.add("Interno");
+        altavocesList.add("Optico");
 
-  }
+        for (int i = 0; i < altavocesList.size(); i++) {
+            try {
+                String nombre = altavocesList.get(i);
+                Class clase = Class.forName("PSonido.Altavoz" + nombre);
+                Object obj = clase.newInstance();
+                Altavoz alt = (Altavoz) obj;
+//              System.out.println(alt);
+//              altavoces.add(alt);
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
 
   //Jaqueline
   private void initEntradas() {
