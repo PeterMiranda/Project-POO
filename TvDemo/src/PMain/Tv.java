@@ -82,7 +82,7 @@ public class Tv extends JFrame{
 
   }
 
-  //David
+  //Angel
   private void initAplicaciones(){
 
   }
