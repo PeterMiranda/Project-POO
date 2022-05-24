@@ -147,7 +147,7 @@ public class Tv extends JFrame{
 
   
   //codigo para inicializar los botones David
-private void initiBotonesGen(){
+private void initiBotones(){
         //inicializamos el atributo de la clase
         altavoces = new ArrayList<>();
         //Inicializando las botones dinamicamente
