@@ -11,8 +11,14 @@ import PBotones.BotonApagado;
 import PBotones.BotonBajarVolumen;
 import PBotones.BotonEncendido;
 import PBotones.BotonSubirVolumen;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 
 /**
@@ -41,12 +47,17 @@ public class Tv extends JFrame{
   private ConexionWifi wifi;
   private boolean estadoWifi;
   
+  //Angel TH
+  private JPanel panelDisplay;
+  private JPanel panelBotones;
+  
   //
   // Constructors
   //
   //Herrera improvement 
-  public Tv () { 
-      
+  public Tv () {
+      initTvJframe();
+      /*
       botones = new ArrayList<Boton>();
       Boton ba = new BotonApagado(this);
       Boton be = new BotonEncendido(this);
@@ -71,7 +82,7 @@ public class Tv extends JFrame{
           Boton bx = botones.get(i);
           bx.execute();
           this.print();
-      }
+      }*/
   };
   
   //
@@ -79,12 +90,59 @@ public class Tv extends JFrame{
   //
   //Angel
   private void initTvJframe(){
-
+      //
+      getContentPane().setLayout(new BorderLayout());
+      
+      //ajustes del panel display
+      panelDisplay = new JPanel();
+      //ver los bordes de este panel
+      panelDisplay.setBorder(BorderFactory.createLineBorder(Color.RED));
+      //poniendo de color negro este panel
+      panelDisplay.setBackground(Color.BLACK);
+      panelDisplay.setLayout(new BorderLayout());
+      
+      //ajustes del panel para los botones
+      panelBotones = new JPanel();
+      panelBotones.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+      panelBotones.setLayout(new FlowLayout());
+      //añadir botones a este panel
+      /*for(Boton btn : botones){
+          panelBotones.add(btn);
+      }*/
+      
+      //ajustes para el JFrame
+      //añadiendo paneles al jframe
+      getContentPane().add(panelDisplay, BorderLayout.CENTER);
+      getContentPane().add(panelBotones, BorderLayout.SOUTH);
+      //ajustes del panel
+      this.setSize(800,600);
+      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      this.setTitle("TV");
+      this.setVisible(true);
   }
 
   //Angel
   private void initAplicaciones(){
+      //inicializamos el atributo de la clase
+        apps = new ArrayList<>();
+        //Inicializando las apps dinamicamente
+        //cambiar esta implementacion
+        ArrayList<String> appList = new ArrayList<>();
+        appList.add("Musica");
+        appList.add("Streaming");
 
+        for (int i = 0; i < appList.size(); i++) {
+            try {
+                String nombre = appList.get(i);
+                Class clase = Class.forName("PApps.App" + nombre);
+                Object obj = clase.newInstance();
+                App app = (App) obj;
+//              System.out.println(app);
+//              apps.add(app);
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
   }
 
   //David
