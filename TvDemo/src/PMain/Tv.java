@@ -197,8 +197,28 @@ private void initiBotones(){
     }
 
 
+
   //Jaqueline
   private void initEntradas() {
+	  //inicializamos el atributo de la clase
+        entradas = new ArrayList<>();
+        //Inicializando las entradas dinamicamente
+        ArrayList<String> entradasList = new ArrayList<>();
+        entradasList.add("HDMI");
+        entradasList.add("USB");
+
+        for (int i = 0; i < entradasList.size(); i++) {
+            try {
+                String nombre = entradasList.get(i);
+                Class clase = Class.forName("PEntradas.Entrada" + nombre);
+                Object obj = clase.newInstance();
+                Entrada ent = (Entrada) obj;
+//              System.out.println(ent);
+//              altavoces.add(ent);
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
   }
 
   //
