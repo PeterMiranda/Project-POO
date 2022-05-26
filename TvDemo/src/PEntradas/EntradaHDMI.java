@@ -3,7 +3,7 @@ package PEntradas;
 import PMain.Tv;
 
 /**
- * Luis Gerardo Garcia Obispo
+ * Luis Gerardo Garcia Obispo (Documentador)
  * Class EntradaHDMI
  * Implementación de la clase EntradaHDMI del paquete entradas
  */
@@ -34,11 +34,11 @@ public class EntradaHDMI extends Entrada {
   // Other methods
   //
   /**
-  * Luis Gerardo Garcia Obispo
+  * Luis Gerardo Garcia Obispo (Documentador)
   * Implementación del método entradas con extención a la superclase TVDEMO
   * Manda a llamar el método setEntrada en la clase TVDEMO
   */
-  //Erik Isaias Ortiz Duarte
+  //Erik Isaias Ortiz Duarte (Coder)
    @Override
    public void execute() {
         setEntradab();
@@ -48,7 +48,7 @@ public class EntradaHDMI extends Entrada {
   * Implementación del método setEntrada
   * Llamando hdmi de la referencia Tv al que pertenece EntradaHDMI
   */
-   //Erik Isaias Ortiz Duarte
+   //Erik Isaias Ortiz Duarte (Coder)
    private void setEntradab() {
         this.tv.hdmi();
         
