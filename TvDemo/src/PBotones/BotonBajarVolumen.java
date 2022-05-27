@@ -2,11 +2,13 @@ package PBotones;
 
 import PMain.Tv;
 
-
-
 /**
+ * Luis Gerardo Garcia Obispo (Documentador)
+ * Implementación de la clase BotonBajarVolumen que es una
+ * extención de la clase Boton
  * Class BotonBajarVolumen
  */
+// Daniel Suárez Nava (Coder)
 public class BotonBajarVolumen extends Boton {
 
   //
@@ -43,7 +45,14 @@ public class BotonBajarVolumen extends Boton {
     public void execute() {
         bajarVolumen();
     }
-//@Daniel Suarez Nava
+  /**
+   * Luis Gerardo Garcia Obispo (Documentador)
+   * Implementación del método bajarVolumen en donde se hace una comparación
+   * de los parámteros de la clase Tv y la clase boton para determinar si el volúmen 
+   * es menor al permitido dentro de un rango de 10 a 0. y si no mostrar un mensaje
+   * en donde diga "es lo máximo que se puede bajar"
+   */
+  // Daniel Suárez Nava (Coder)
     private void bajarVolumen() {
                
       if (this.tv.getVolumen() > MIN_VOLUME) {
