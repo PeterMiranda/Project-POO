@@ -347,6 +347,12 @@ public class Tv {
   public void print() {
       System.out.println("" + this.toString());
   }
+  public String getEstadoEU( ) {
+    return entradaA;
+  }
+  public String getEstadoEH( ) {
+    return entradaB;
+  }
   /** Luis Gerardo Garcia Obispo (Documentador)
   * Implementación del método String donde se agregaron
   * los objetos de estado, como lo es el propio estado, volumen,
