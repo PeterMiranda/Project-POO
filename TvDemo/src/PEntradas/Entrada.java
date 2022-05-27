@@ -1,14 +1,14 @@
 package PEntradas;
 
-
+import PMain.Tv;
 
 /**
  * Class Entrada
  * Luis Gerardo Garcia Obispo (Documentador)
  * Implementación de la clase Entrada
  */
-public class Entrada {
-
+public abstract class Entrada {
+  protected Tv tv;
   //
   // Fields
   //
