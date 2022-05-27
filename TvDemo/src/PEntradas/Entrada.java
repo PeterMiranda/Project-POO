@@ -2,13 +2,17 @@ package PEntradas;
 
 import PMain.Tv;
 
+import javax.swing.*;
+
 /**
  * Class Entrada
  * Luis Gerardo Garcia Obispo (Documentador)
  * Implementación de la clase Entrada
  */
-public abstract class Entrada {
-  protected Tv tv;
+public abstract class Entrada extends JButton {
+
+    protected Tv tv;
+    protected String nombre;
   //
   // Fields
   //
@@ -35,6 +39,12 @@ public abstract class Entrada {
   //Erik Isaias Ortiz Duarte (Coder)
     public Entrada(Tv tv) {
         this.tv = tv;
+    }
+
+    public Entrada(Tv tv, String nombre) {
+        this.tv = tv;
+        this.nombre = nombre;
+        this.setText(nombre);
     }
 
     //
