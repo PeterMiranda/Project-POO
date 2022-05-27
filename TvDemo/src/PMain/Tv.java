@@ -73,8 +73,15 @@ public class Tv {
           bx.execute();
           this.print();
       }
-      //Luis Antonio Pacheco Moreno
-      //Ortiz Duarte Erik Isaias 
+      /**
+      * Luis Gerardo Garcia Obispo (Documentador)
+      * Implementación de los objetos eh y eu correspondientes
+      * a la EntradaHDMI y EntradaUSB.
+      * y depués se manda a llamar a los metodos de execute y print
+      * para mostrar la conexion de HDMI y USB
+      */
+      //Luis Antonio Pacheco Moreno (Coder)
+      //Erik Isaias Ortiz Duarte (Coder)
       Entrada eh = new EntradaHDMI(this);
       Entrada eu = new EntradaUSB(this);
       
@@ -306,9 +313,12 @@ public class Tv {
   {
       this.volumen--;
   }
-  //Luis Antonio Pacheco Moreno
-  //modificamos el estado del puerto usb
-  //cada vez que sea llamado
+  /** Luis Gerardo Garcia Obispo (Documentador)
+  * Implementación del método usb donde se modifica
+  * el estado en el que se encuentra, si está conectado o
+  * desconectado, cada vez que sea llamado. 
+  */
+  //Luis Antonio Moreno Pacheco (Coder)
   public void usb (){
       if(entradaA.equals("USB CONECTADO")){
           this.entradaA = "USB DESCONECTADO";
@@ -318,9 +328,12 @@ public class Tv {
               this.entradaA = "USB CONECTADO";
       }
   }
-  //Erik Isaias Ortiz Duarte
-  //modificamos el estado del puerto hdmi
-  //cada vez que sea llamado
+  /** Luis Gerardo Garcia Obispo (Documentador)
+  * Implementación del método hdmi donde se modifica
+  * el estado en el que se encuentra, si está conectado o
+  * desconectado, cada vez que sea llamado. 
+  */
+  //Erik Isaias Ortiz Duarte (Coder)
   public void hdmi (){
       
       if(entradaB.equals("HDMI CONECTADO")){
@@ -334,7 +347,12 @@ public class Tv {
   public void print() {
       System.out.println("" + this.toString());
   }
-  
+  /** Luis Gerardo Garcia Obispo (Documentador)
+  * Implementación del método String donde se agregaron
+  * los objetos de estado, como lo es el propio estado, volumen,
+  * entradaA y entradaB. 
+  */
+  //Erik Isaias Ortiz Duarte (Coder)
   public String toString() {
       String s = "";
       s += this.estado;
