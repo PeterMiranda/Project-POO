@@ -149,26 +149,33 @@ public class Tv extends JFrame{
   //codigo para inicializar los botones David
 private void initiBotones(){
         //inicializamos el atributo de la clase
-        altavoces = new ArrayList<>();
+        this.botones = new ArrayList<>();//cambiar altavoces por botones
         //Inicializando las botones dinamicamente
         ArrayList<String> btnList = new ArrayList<>();
         btnList.add("Encendido");
         btnList.add("Apagado");
         btnList.add("BajarVolumen");
         btnList.add("SubirVolumen");
+        btnList.add("App");
+        btnList.add("Resolucion");
 
         for (int i = 0; i < btnList.size(); i++) {
-            try {
-                String nombre = btnList.get(i);
-                Class clase = Class.forName("PBotones.Boton" + nombre);
-                Object obj = clase.newInstance();
-                Boton btn = (Boton) obj;
-//              System.out.println(btn);
-//              botones.add(btn);
-            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-        }
+          try {
+              String nombre = btnList.get(i);
+              Constructor c = Class.forName("PBotones.Boton" + nombre).getConstructor(Tv.class);
+              Boton bot = (Boton) c.newInstance(this);
+              bot.setText(nombre);
+              //System.out.println(bot);
+              this.botones.add(bot);//Se agregan al arreglo de botones
+              this.panelBotones.add(bot);//se agregan al panel de botones
+          } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+              throw new RuntimeException(e);
+          } catch (InvocationTargetException e) {
+              throw new RuntimeException(e);
+          } catch (NoSuchMethodException e) {
+              throw new RuntimeException(e);
+          }
+      }
 
 
 
