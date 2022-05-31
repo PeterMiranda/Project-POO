@@ -69,7 +69,9 @@ public class ObtenerMedidas extends JFrame {
     //implementar un metodo para actualizar los datos de las medidas a CGS en pantalla
     //Anotonio ibarra
     private void actualizaMedidaCGS(){
-
+        System.out.println("Cambiando a CGS");
+        dim.cambiarMedida(new MedidaCGS());
+        actualizaMedidas("ln")<
     }
 
     //implementar un metodo para obtener los cambios de medida desde un objeto de la clase Dimension
