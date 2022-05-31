@@ -27,7 +27,9 @@ public class ObtenerMedidas extends JFrame {
     //Jaqueline Cruz
     //implementar un metodo para actualizar los datos de las medidas a Internacional en pantalla
     private void actualizaMedidaInt(){
-
+        System.out.println("Cambiando a internacional");
+            dim.cambiarMedida(new MedidaInternacional());
+            actualizaMedidas("CM");
     }
     //implementar un metodo para actualizar los datos de las medidas a CGS en pantalla
     //Anotonio ibarra
