@@ -36,9 +36,15 @@ public class ObtenerMedidas extends JFrame {
     }
 
     //implementar un metodo para obtener los cambios de medida desde un objeto de la clase Dimension
-    //Angel Torres
+    //David Abner
     private void actualizaMedidas(String unidad) {
-
+        DecimalFormat df = new DecimalFormat("0.00");
+        labelDiagonal.setText("Diagonal :"+
+                Double.toString(Double.parseDouble(df.format(dim.getDiagonal())))+" "+unidad);
+        labelAncho.setText("Ancho: "
+                +Double.toString(Double.parseDouble(df.format(dim.getAncho())))+" "+unidad);
+        labelLargo.setText("Largo: "+
+                Double.toString(Double.parseDouble(df.format(dim.getLargo())))+" "+unidad);
     }
 
     //autodemo
