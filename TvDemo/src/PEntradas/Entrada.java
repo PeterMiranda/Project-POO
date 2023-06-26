@@ -1,17 +1,18 @@
 package PEntradas;
 
-
+import PMain.Tv;
 
 /**
  * Class Entrada
  */
-public class Entrada {
+public abstract class Entrada implements InterfaceEntrada {
 
+  protected Tv tv;
+  
   //
   // Fields
   //
 
-  
   //
   // Constructors
   //

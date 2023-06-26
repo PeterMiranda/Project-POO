@@ -17,9 +17,9 @@ public class EntradaUSB extends Entrada {
   //
   //Herrera improvement public EntradaUSB () { }; 
   //Luis Antonio Moreno Pacheco 
-  public EntradaUSB (Tv tv) {
+  public EntradaUSB(Tv tv) {
     super(tv);
-  };
+  }
   //
   // Methods
   //
@@ -33,12 +33,8 @@ public class EntradaUSB extends Entrada {
   // Other methods
   //
   //Luis Antonio Moreno Pacheco
-  @Override
-  public void execute() {
-    setEntradaa();
-  } 
-  //Luis Antonio Moreno Pacheco
-  private void setEntradaa() {
-    this.tv.usb();
-  }
+    @Override
+    public void execute() {
+        this.tv.usb();
+    }
 }

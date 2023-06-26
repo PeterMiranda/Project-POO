@@ -32,14 +32,9 @@ public class EntradaHDMI extends Entrada {
   // Other methods
   //
   //Erik Isaias Ortiz Duarte
-   @Override
-   public void execute() {
-        setEntradab();
-    }
-   //Erik Isaias Ortiz Duarte
-   private void setEntradab() {
+    @Override
+    public void execute() {
         this.tv.hdmi();
-        
     }
 
 }
